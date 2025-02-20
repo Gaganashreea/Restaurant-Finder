@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Merienda", cursive;
+  background: linear-gradient(135deg, #20002c, #4a148c); /* Dark Purple Gradient */
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 0; /* No extra padding */
+}
+
+/* Header (Full Width & No Extra Borders) */
+header {
+  width: 100vw; /* Ensure full screen width */
+  background: rgba(10, 10, 25, 0.95); /* Dark Blackish Header */
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+  border-bottom: 3px solid #ff5733;
+  box-shadow: 0px 4px 10px rgba(255, 87, 51, 0.3);
+  position: fixed; /* Keep it at the top */
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+/* Add space below fixed header */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 6rem 2rem 2rem; /* Adjusted padding for header */
+}
+
+/* Search Input */
+#search-input {
+  font-family: "Merienda", cursive;
+  padding: 1rem;
+  font-size: 1.2rem;
+  width: 90%;
+  max-width: 600px;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  text-align: center;
+}
+
+#search-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Button */
+button {
+  font-family: "Merienda", cursive;
+  background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background: linear-gradient(45deg, #ff4500, #ff6347);
+  transform: scale(1.05);
+}
+
+/* Restaurants Container */
+#restaurants {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Restaurant Cards */
+.restaurant-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 1.5rem;
+  width: calc(33.333% - 1rem);
+  max-width: 350px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.restaurant-card h2 {
+  margin: 0.5rem 0;
+  color: #ff6347;
+  font-size: 1.5rem;
+}
+
+.restaurant-card p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: #cccccc;
+}
+
+.restaurant-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  #restaurants {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .restaurant-card {
+    width: 90%;
+    max-width: 450px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    font-size: 1.6rem;
+    padding: 0.7rem 0;
+  }
+
+  #search-input {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+  }
+
+  main {
+    padding-top: 5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    font-size: 1.4rem;
+    padding: 0.6rem 0;
+  }
+
+  #search-input {
+    font-size: 1rem;
+    padding: 0.7rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 0.7rem 1.2rem;
+  }
+
+  .restaurant-card {
+    width: 100%;
+  }
+
+  main {
+    padding-top: 4.5rem;
+  }
+}
